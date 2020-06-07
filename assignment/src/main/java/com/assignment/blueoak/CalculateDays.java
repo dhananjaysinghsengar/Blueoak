@@ -9,18 +9,21 @@ public class CalculateDays {
     try {
 
       startDateInEpoch = utilityObject.convertStringDateToEpoch(startDate);
-      System.out.println("start date: " + startDateInEpoch);
 
       endDateInEpoch = utilityObject.convertStringDateToEpoch(endDate);
-      System.out.println("end date: " + endDateInEpoch);
 
-      if (startDateInEpoch <= endDateInEpoch) {
-        numberOfDays = (double) ((endDateInEpoch - startDateInEpoch) / (1000 * 60 * 60 * 24));
-        System.out.println("Diff:" + numberOfDays);
-        return (long) numberOfDays + 1;
+      if (startDateInEpoch < 0 || endDateInEpoch < 0) {
+        // Special character should be rejected
+        return -3;
 
-      } else {
+      } else if (startDateInEpoch >= endDateInEpoch)
+        // Start date should be earlier than end date
+
         return -1;
+      else {
+
+        numberOfDays = (double) ((endDateInEpoch - startDateInEpoch) / (1000 * 60 * 60 * 24));
+        return (long) numberOfDays + 1;
 
       }
 

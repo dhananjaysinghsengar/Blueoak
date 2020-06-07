@@ -15,21 +15,27 @@ public class Library {
 
         UserInput userInputObject = new UserInput();
         List<String> startEndDate = userInputObject.userInput();
-        System.out.println("Date: " + startEndDate.get(0) + " and " + startEndDate.get(1));
 
         CalculateDays objectForCalculatingDays = new CalculateDays();
 
         long numberOfDays = objectForCalculatingDays.calculateNumberOfDays(startEndDate.get(0), startEndDate.get(1));
 
+        displayResponse(numberOfDays);
+
+    }
+
+    private static void displayResponse(long numberOfDays) {
+
         if (numberOfDays == -1) {
             System.out.println("Start date should not be later than end date.");
 
         } else if (numberOfDays == -2) {
-            System.out.println("Error while performing operation.");
+            System.out.println("Internal error while performing operation.");
+        } else if (numberOfDays == -3) {
+            System.out.println("Please reverify inputs for special character");
         } else {
             System.out.println("Number of Days: " + numberOfDays);
         }
-
     }
 
 }

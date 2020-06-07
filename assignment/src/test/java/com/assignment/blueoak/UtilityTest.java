@@ -9,19 +9,23 @@ import org.junit.Test;
 public class UtilityTest {
 
   @Test
-  public void testCalculateNumberOfDaysMethod_1() throws ParseException {
+  public void testUtilityMethod_1() throws ParseException {
     Utility classUnderTest = new Utility();
     assertEquals(1580821200000L, classUnderTest.convertStringDateToEpoch("05-Feb-2020"));
 
   }
 
   @Test(expected = ParseException.class)
-  public void testCalculateNumberOfDaysMethod_2() throws ParseException {
+  public void testUtilityMethod_2() throws ParseException {
     Utility classUnderTest = new Utility();
-    // assertEquals(1580821200000L,
-    // classUnderTest.convertStringDateToEpoch("fdfdfd"));
     classUnderTest.convertStringDateToEpoch("fdfdfd");
 
+  }
+
+  @Test
+  public void testUtilityMethod_3() throws ParseException {
+    Utility classUnderTest = new Utility();
+    assertEquals(-62101245600000L, classUnderTest.convertStringDateToEpoch("05-Feb-2@20"));
   }
 
 }
