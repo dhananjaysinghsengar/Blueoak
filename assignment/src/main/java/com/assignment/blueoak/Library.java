@@ -7,11 +7,11 @@ import java.util.List;
 
 public class Library {
 
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-        calculateDays();
-    }
-
-    public static void calculateDays() {
 
         UserInput userInputObject = new UserInput();
         List<String> startEndDate = userInputObject.userInput();
@@ -20,21 +20,26 @@ public class Library {
 
         long numberOfDays = objectForCalculatingDays.calculateNumberOfDays(startEndDate.get(0), startEndDate.get(1));
 
-        displayResponse(numberOfDays);
+        String result = displayResponse(numberOfDays);
 
+        System.out.println(result);
     }
 
-    private static void displayResponse(long numberOfDays) {
+    /**
+     * @param numberOfDays
+     * @return String
+     */
+    private static String displayResponse(long numberOfDays) {
 
         if (numberOfDays == -1) {
-            System.out.println("Start date should not be later than end date.");
+            return "Start date should not be later than end date.";
 
         } else if (numberOfDays == -2) {
-            System.out.println("Internal error while performing operation.");
+            return "Internal error while performing operation.";
         } else if (numberOfDays == -3) {
-            System.out.println("Please reverify inputs for special character");
+            return "Please reverify inputs for special character";
         } else {
-            System.out.println("Number of Days: " + numberOfDays);
+            return "Number of Days: " + numberOfDays;
         }
     }
 

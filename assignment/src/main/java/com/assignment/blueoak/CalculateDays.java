@@ -2,6 +2,11 @@ package com.assignment.blueoak;
 
 public class CalculateDays {
 
+  /**
+   * @param startDate
+   * @param endDate
+   * @return long
+   */
   public long calculateNumberOfDays(String startDate, String endDate) {
     long startDateInEpoch, endDateInEpoch;
     double numberOfDays = 0.0f;

@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class UserInput {
 
+  /**
+   * @return List<String>
+   */
   public List<String> userInput() {
     List<String> inputDate = new ArrayList<>();
     String startDate, endDate;
