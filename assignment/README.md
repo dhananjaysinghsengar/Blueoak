@@ -37,9 +37,9 @@ GIT is used for source control management. Gradle has been choosen for build and
 
 #### Status code and description
 
-| Status Code | Description                                   |
-| :---------: | :-------------------------------------------- |
-|     -1      | Start date should not be later than end date. |
-|     -2      | Internal error while performing operation.    |
-|     -3      | Please reverify inputs for special character  |
-|             |                                               |
+| Exceptions | Description                                   |
+| :--------: | :-------------------------------------------- |
+|     -1     | Start date should not be later than end date. |
+|     -2     | Internal error while performing operation.    |
+|     -3     | Please reverify inputs for special character  |
+|            |                                               |
